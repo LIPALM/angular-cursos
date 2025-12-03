@@ -1,0 +1,19 @@
+<h2 class="text-4xl font-bold mt-5 ml-2">Buscador de gifs</h2>
+<h3 class="text-2xl text-gray-500 ml-2" >Buscador de gifs</h3>
+
+<section class="flex flex-col">
+  <input
+    type="text"
+    placeholder="buscar gifs"
+    class="bg-gray-200 border border-gray-800 mt-3 ml-2 p-2 rounded-sm"
+    (keyup.enter)="onSearch(txtSearch.value)"
+    #txtSearch
+  />
+</section>
+
+
+<section class="pt-3 pb-3">
+
+  <gif-list [gifs]="gifService.searchGifs()"/>
+
+</section>

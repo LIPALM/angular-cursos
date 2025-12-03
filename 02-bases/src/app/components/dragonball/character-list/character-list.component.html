@@ -1,0 +1,22 @@
+<h3>{{ listName() }}</h3>
+
+<ul>
+  @for ( character of characters(); track character.id; let i = $index) {
+    @if (character.power > 10000) {
+      <li>
+        <span> {{ i + 1 }} - {{character.name }}</span>
+        <strong
+          [class.text-danger] = "character.power > 15000"
+          [class.text-info] = "character.power <= 15000"
+          >
+            <!-- [ngClass="powerClasses"] -->
+            ({{ character.power }})</strong
+          >
+      </li>
+    } @else {
+      <li>
+        <strong> No cumple el resgistro de poder minimo </strong>
+      </li>
+    }
+  }
+</ul>
