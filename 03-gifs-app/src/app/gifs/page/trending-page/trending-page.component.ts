@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, inject, viewChild } from '@angular/core';
 import { GifListComponent } from '../../components/gif-list/gif-list.component';
 import { GifService } from '../../services/gifs.service';
+import { ScrollStateService } from '../../../shared/services/scroll-state.service';
 
 // const imageUrls: string[] = [
 //     "https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg",
@@ -21,10 +22,49 @@ import { GifService } from '../../services/gifs.service';
 
 @Component({
   selector: 'app-trending-page',
-  imports: [GifListComponent],
+  // imports: [GifListComponent],
   templateUrl: './trending-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class TrendingPageComponent {
-  readonly gifService = inject(GifService);
+export default class TrendingPageComponent implements AfterViewInit {
+
+  gifService = inject(GifService);
+  scrollStateService = inject(ScrollStateService);
+
+
+  scrollDivRef = viewChild<ElementRef<HTMLDivElement>>('groupDiv');
+
+  ngAfterViewInit(): void {
+    const scrollDiv = this.scrollDivRef()?.nativeElement;
+
+    if (!scrollDiv) return;
+
+    scrollDiv.scrollTop = this.scrollStateService.trendingScrollPosition();
+  }
+
+  onScroll( event: Event) {
+
+    const scrollDiv = this.scrollDivRef()?.nativeElement;
+
+    if (!scrollDiv) return;
+
+    const scrollTop = scrollDiv.scrollTop;
+    const ClienteHeihgt = scrollDiv.clientHeight;
+    const scrollHeight = scrollDiv.scrollHeight;
+
+    debugger;
+
+    this.scrollStateService.trendingScrollPosition.set( scrollTop );
+    console.log(this.scrollStateService.trendingScrollPosition());
+
+    // console.log({ scroltotal: scrollTop + ClienteHeihgt, scrollHeight });]
+
+    const isAtBottom = scrollTop + ClienteHeihgt + 300 >= scrollHeight;
+    console.log({ isAtBottom });
+
+    if (isAtBottom) {
+      this.gifService.loadTrendingGifs();
+    }
+
+  }
 }
