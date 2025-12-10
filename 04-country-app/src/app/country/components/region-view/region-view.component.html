@@ -1,0 +1,11 @@
+@for (region of regions; track region) {
+  <button
+    class="btn btn-outline mr-2"
+    (click)="onRegionClick(region)"
+    [class.btn-primary]="selectedRegion() === region"
+  >
+    {{ region }}
+  </button>
+}
+
+<!-- export type Region = 'Africa' | 'Americas' | 'Asia' | 'Europe' | 'Oceania' | 'Antarctic'; -->

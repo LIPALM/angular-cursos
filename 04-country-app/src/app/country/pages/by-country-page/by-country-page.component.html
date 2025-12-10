@@ -1,0 +1,18 @@
+
+<country-search-input
+  [initialValue]="query()"
+  (value)="query.set($event)"
+  placeholder="Search country by name"
+  
+  />
+
+<country-list-component
+  [countries]="countryResource.value() ?? []"
+  [errorMessage]="countryResource.error()"
+  [isEmpty]="countryResource.value()?.length === 0"
+  [isLoading]="countryResource.isLoading()"
+/>
+
+
+
+<!-- class="mt-5 max-w-lg flex flex-row justify-center items-center mx-auto text-2xl" -->

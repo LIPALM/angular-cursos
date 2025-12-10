@@ -1,0 +1,47 @@
+<section *ngIf="countryView() as countryview" class="mx-10 grid grid-cols-5 shadow-lg rounded-xl">
+  <div class="grid grid-rows-3 items-center justify-center text-center">
+    <h1 class="stat-title">País</h1>
+    <h2 class="stat-value link-secondary">{{ countryview.name }}</h2>
+    <a class="stat-desc cursor-pointer">{{ countryview.region}}</a>
+  </div>
+  <div class="grid grid-rows-3 items-center justify-center text-center">
+    <h1 class="stat-title">Capital</h1>
+    <h2 class="stat-value link-primary">{{ countryview.capital }}</h2>
+    <p class="stat-desc">{{ countryview.name }}</p>
+  </div>
+  <div class="grid grid-rows-3 items-center justify-center text-center">
+    <h1 class="stat-title">Población</h1>
+    <h2 class="stat-value link-accent">{{ countryview.population | number }}</h2>
+    <p class="stat-desc">{{ currenyYear() }}</p>
+  </div>
+    <div class="grid grid-rows-3 items-center justify-center text-center">
+    <h1 class="stat-title">Region</h1>
+    <h2 class="stat-value link-error">{{ countryview.subregion }}</h2>
+    <p class="stat-desc">{{ countryview.region }}</p>
+  </div>
+  <div class="grid grid-rows-3 items-center justify-center text-center">
+    <h1 class="stat-title">Idioma</h1>
+    <h2 class="stat-value link-error">{{ getLanguagesDisplay() }}</h2>
+    <p class="stat-desc">{{ countryview.name }}</p>
+  </div>
+</section>
+
+<section class="mt-4 mx-auto max-w-4xl">
+  <div class="diff aspect-[16/9]">
+    <div class="diff-item-1">
+      <img
+        [alt]="countryView().name"
+        [src]="countryView().flagsvg"
+      />
+    </div>
+    <div class="diff-item-2">
+      <img
+        class="blur"
+        [alt]="countryView().name"
+        [src]="countryView().flagsvg"
+      />
+    </div>
+    <div class="diff-resizer"></div>
+  </div>
+</section>
+

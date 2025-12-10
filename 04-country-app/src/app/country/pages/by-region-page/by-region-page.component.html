@@ -1,0 +1,7 @@
+<region-view-component (regionSelected)="onRegionSelected($event)"/>
+
+<country-list-component
+  [countries]="countryResource.value() ?? []"
+  [isLoading]="countryResource.isLoading()"
+  [errorMessage]="countryResource.error() ? 'Error al cargar países' : ''"
+/>
