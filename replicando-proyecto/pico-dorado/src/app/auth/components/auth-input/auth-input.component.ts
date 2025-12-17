@@ -8,7 +8,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 })
 export class AuthInputComponent {
   label = input.required<string>();
-  text = input<string>();
+  type = input<string>();
   placeholder = input<string>('');
   required = input.required<boolean>();
 
