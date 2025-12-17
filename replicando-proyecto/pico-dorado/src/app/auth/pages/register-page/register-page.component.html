@@ -1,4 +1,32 @@
 <section class="min-h-screen w-full bg-cover bg-center flex flex-col md:flex-row justify-center items-center"
+  style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/img/fondo-home.jpg');">
+
+  <auth-layout [imageUrl]="'/img/fondo-register y login.jpg'">
+
+    <form action="" class="bg-black w-full h-full flex flex-col items-center justify-center gap-2 p-0 md:p-10">
+      <h1 class="text-2xl text-white">Sign Up Account</h1>
+      <p class="text-gray-400 text-xs">Enter your personal datato create your account</p>
+
+      <auth-social/>
+
+      <hr class="border-gray-600 w-full max-w-xs my-4 ">
+      <div class="flex flex-col gap-3 w-full max-w-xs">
+        <auth-input [label]="'Nombre'" [required]="true" [placeholder]="'Ingrese su nombre'" [text]="'text'"/>
+        <auth-input [label]="'Email'" [required]="true" [placeholder]="'Ingrese su correo electrónico'" [text]="'email'"/>
+        <auth-input [label]="'Password'" [required]="true" [placeholder]="'Ingrese su contraseña'" [text]="'password'"/>
+      </div>
+      <p class="text-gray-400 text-xs flex flex-row w-full max-w-xs items-center">Must be at least 8 characters</p>
+
+      <auth-button [buttonText]="'Sign Up'"/>
+
+
+      <p class="text-gray-400 text-xs mt-4">Already have an account? <a routerLink="/auth/login" class="text-white font-bold hover:text-gray-200 cursor-pointer">Login</a></p>
+    </form>
+  </auth-layout>
+</section>
+
+
+<!-- <section class="min-h-screen w-full bg-cover bg-center flex flex-col md:flex-row justify-center items-center"
 style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/img/fondo-home.jpg');">
 
   <div class="w-full max-w-4xl bg-black flex flex-col md:flex-row rounded-bl-4xl rounded-tr-4xl overflow-hidden shadow-lg shadow-black/40">
@@ -50,4 +78,4 @@ style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))
   </div>
 
 
-</section>
+</section> -->
