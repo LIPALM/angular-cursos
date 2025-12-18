@@ -1,1 +1,6 @@
-<button class="w-full bg-white py-2 mt-4 rounded-xl font-semibold hover:bg-gray-200 cursor-pointer transition-transform delay-150 duration-300 ease hover:scale-105">{{ buttonText() }}</button>
+<button
+  type="button"
+  (click)="buttonClick.emit()"
+  class="w-full bg-white py-2 mt-4 rounded-xl font-semibold hover:bg-gray-200 cursor-pointer transition-transform delay-150 duration-300 ease hover:scale-105">
+  {{ buttonText() }}
+</button>

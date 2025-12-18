@@ -3,7 +3,7 @@
 
   <auth-layout [imageUrl]="'/img/fondo-register y login.jpg'">
 
-    <form action="" class="bg-black w-full h-full flex flex-col items-center justify-center gap-2 p-0 md:p-10">
+    <form novalidate action="" class="bg-black w-full h-full flex flex-col items-center justify-center gap-2 p-0 md:p-10">
       <h1 class="text-2xl text-white">Sign Up Account</h1>
       <p class="text-gray-400 text-xs">Enter your personal datato create your account</p>
 
@@ -11,13 +11,33 @@
 
       <hr class="border-gray-600 w-full max-w-xs my-4 ">
       <div class="flex flex-col gap-3 w-full max-w-xs">
-        <auth-input [label]="'Nombre'" [required]="true" [placeholder]="'Ingrese su nombre'" [type]="'text'"/>
-        <auth-input [label]="'Email'" [required]="true" [placeholder]="'Ingrese su correo electrónico'" [type]="'email'"/>
-        <auth-input [label]="'Password'" [required]="true" [placeholder]="'Ingrese su contraseña'" [type]="'password'"/>
+        <auth-input
+          [label]="'Nombre'"
+          [placeholder]="'Ingrese su nombre'"
+          [required]="true"
+          [type]="'text'"
+          [value]="nombre()"
+          (valueChange)="nombre.set($event)"
+          />
+        <auth-input
+          [label]="'Email'"
+          [placeholder]="'Ingrese su correo electrónico'"
+          [required]="true"
+          [type]="'email'"
+          [value]="email()"
+          (valueChange)="email.set($event)"/>
+        <auth-input
+          [label]="'Password'"
+          [placeholder]="'Ingrese su contraseña'"
+          [required]="true"
+          [type]="'password'"
+          [value]="password()"
+          (valueChange)="password.set($event)"
+          />
       </div>
       <p class="text-gray-400 text-xs flex flex-row w-full max-w-xs items-center">Must be at least 8 characters</p>
 
-      <auth-button [buttonText]="'Sign Up'"/>
+      <auth-button [buttonText]="'Sign Up'" (buttonClick)="onRegister()"/>
 
 
       <p class="text-gray-400 text-xs mt-4">Already have an account? <a routerLink="/auth/login" class="text-white font-bold hover:text-gray-200 cursor-pointer">Login</a></p>

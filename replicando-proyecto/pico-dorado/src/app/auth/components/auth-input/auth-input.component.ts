@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'auth-input',
@@ -11,5 +11,8 @@ export class AuthInputComponent {
   type = input<string>();
   placeholder = input<string>('');
   required = input.required<boolean>();
+
+  value = input<string>('');
+  valueChange = output<string>();
 
 }

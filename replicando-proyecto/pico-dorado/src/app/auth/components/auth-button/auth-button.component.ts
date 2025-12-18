@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'auth-button',
@@ -11,4 +12,5 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 })
 export class AuthButtonComponent {
   buttonText = input.required<string>();
+  buttonClick = output<void>();
 }
