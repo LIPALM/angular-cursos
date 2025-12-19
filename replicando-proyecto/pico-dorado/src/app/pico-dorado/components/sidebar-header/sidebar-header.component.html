@@ -1,0 +1,22 @@
+
+<div class=" flex flex-col gap-1 p-2">
+  <div class="flex flex-row gap-4 items-center p-2">
+    <span class="bg-linear-to-r from-yellow-500 to-orange-500 text-white font-mono text-lg w-10 h-10 flex flex-row items-center justify-center bg-gradientr rounded-lg shadow-lg shadow-amber-600 text-shadow-lg/20 text-shadow-white">{{env.Abrevacion}}</span>
+    <h2 class="text-xl font-bold text-slate-800 font-mono ">{{env.Titulo}}</h2>
+  </div>
+  <div class="flex flex-col p-2">
+    <div class="flex flex-row rounded-2xl bg-white shadow-md shadow-gray-400/20 items-center">
+      <div class="flex flex-col w-24 justify-center items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24"><g fill="none" stroke="#000" stroke-dasharray="28" stroke-dashoffset="28" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8"><path d="M4 21v-1c0 -3.31 2.69 -6 6 -6h4c3.31 0 6 2.69 6 6v1"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.2s" values="28;0"/></path><path d="M12 11c-2.21 0 -4 -1.79 -4 -4c0 -2.21 1.79 -4 4 -4c2.21 0 4 1.79 4 4c0 2.21 -1.79 4 -4 4Z"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.2s" dur="0.2s" values="28;0"/></path></g></svg>
+      </div>
+      <div class="flex flex-col w-full p-2">
+        <h1 class="text-sm font-mono font-bold">{{env.Rol}}</h1>
+        <p class="text-gray-800 font-mono">En linea</p>
+      </div>
+      <div class="relative flex flex-col w-20 justify-center items-center">
+        <span class="absolute inline-flex h-4 w-4 animate-ping rounded-full opacity-75 bg-green-300 " ></span>
+        <svg class="relative inline-flex size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#56de39" fill-opacity="0" stroke="#56de39" stroke-dasharray="64" stroke-dashoffset="64" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5" d="M3 12c0 -4.97 4.03 -9 9 -9c4.97 0 9 4.03 9 9c0 4.97 -4.03 9 -9 9c-4.97 0 -9 -4.03 -9 -9Z"><animate fill="freeze" attributeName="fill-opacity" begin="0.93s" dur="0.232s" values="0;0.6"/><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.93s" values="64;0"/></path></svg>
+      </div>
+    </div>
+  </div>
+</div>
