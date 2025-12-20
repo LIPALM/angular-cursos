@@ -1,9 +1,11 @@
-<div class="bg-gray-100 h-screen grid grid-rows-[168px_1fr_104px]">
-  <div class="flex flex-col p-2 ">
+<div class="bg-gray-100 h-screen grid grid-rows-[169px_1fr_104px] ">
+  <div class="flex flex-col p-2 border-b-2 border-r-2 items-center justify-center border-gray-300">
     <sidebar-header/>
   </div>
-  <div class="bg-cyan-100 flex flex-col">2</div>
-  <div class="flex flex-col p-6 ">
-    <sidebar-footer/>
+  <div class="bg-gray-100 flex flex-col overflow-auto p-6 gap-4 overflow-y-auto border-r-2 border-gray-300">
+    <sidebar-menu />
+  </div>
+  <div class="flex flex-col p-6 border-t-2 border-r-2 border-gray-300 justify-center">
+    <sidebar-footer buttonText="Sesion" />
   </div>
 </div>
