@@ -16,7 +16,7 @@ export const routes: Routes = [
       },
       {
         path: 'tickets-generados',
-        loadComponent: () => import('./pages/dashboard-tickets-generados/dashboard-tickets-generados.component') .then( t => t.DashboardTicketsGeneradosComponent )
+        loadComponent: () => import('./pages/dashboard-tickets-generados/dashboard-tickets-generados.component').then( t => t.DashboardTicketsGeneradosComponent )
       },
       {
         path: 'pedidos-anulados',

@@ -1,0 +1,31 @@
+<section class="mx-5">
+  <h1 class="text-2xl font-bold">Pipes Numericos</h1>
+  <h3 class="text-xl font-thin">Pipes incluidos en angular</h3>
+
+</section>
+
+<div class="stats stats-vertical lg:stats-horizontal shadow w-full">
+  <div class="stat">
+    <div class="stat-title">Number: '1.2-2'</div>
+    <div class="stat-value">{{ numbersell() | number:'1.2-2' }}</div>
+    <div class="stat-desc">{{ numbersell() }}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Number: '1.2-2'</div>
+    <div class="stat-value">{{ numbersell() + 5000 | number:'1.2-2' }}</div>
+    <div class="stat-desc">{{ numbersell() }}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Percent</div>
+    <div class="stat-value">{{ percentage() | percent: '1.2-2' }}</div>
+    <div class="stat-desc">{{ percentage() }}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Currency</div>
+    <div class="stat-value">{{ numbersell() | currency: 'CAD' : 'symbol-narrow' : '1.4-4' }}</div>
+    <div class="stat-desc">{{ numbersell() }}</div>
+  </div>
+</div>

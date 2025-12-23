@@ -1,0 +1,92 @@
+<section class="mx-5">
+  <h1 class="text-2xl font-bold">Pipes Basicos</h1>
+  <h3 class="text-xl font-thin">Pipes incluidos en angular</h3>
+
+</section>
+
+<div class="stats stats-vertical lg:stats-horizontal shadow w-full">
+  <div class="stat">
+    <div class="stat-title">Lowercase Pipe</div>
+    <div class="stat-value">{{ nameUpper() | lowercase }}</div>
+    <div class="stat-desc">{{ nameUpper() }}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Uppercase Pipe</div>
+    <div class="stat-value">{{ nameLower() | uppercase }}</div>
+    <div class="stat-desc">{{ nameLower() }}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Title Case Pipe</div>
+    <div class="stat-value">{{ fulanName() | titlecase}}</div>
+    <div class="stat-desc">{{ fulanName() }}</div>
+  </div>
+</div>
+
+
+<div class="divider"></div>
+
+<div class="stats stats-vertical lg:stats-horizontal shadow">
+  <div class="stat">
+    <div class="stat-title">Date Pipe</div>
+    <div class="stat-value">{{ custonDate() | date}}</div>
+    <div class="stat-desc">{{ custonDate() }}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Date | long | GMT-6</div>
+    <div class="stat-value">{{custonDate() | date:'long':'GMT-6'}}</div>
+    <div class="stat-desc">{{custonDate()}}</div>
+  </div>
+</div>
+
+
+<div class="stats stats-vertical lg:stats-horizontal shadow">
+  <div class="stat">
+    <div class="stat-title">Date: 'yyyy MM'</div>
+    <div class="stat-value">{{ custonDate() | date:'yyyy MM'}}</div>
+    <div class="stat-desc">{{ custonDate() }}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Date | short | GMT-6</div>
+    <div class="stat-value">{{ custonDate() | date:'short':'GMT-6'}}</div>
+    <div class="stat-desc">{{ custonDate() }}</div>
+  </div>
+</div>
+
+
+
+<div class="stats stats-vertical lg:stats-horizontal shadow">
+  <div class="stat">
+    <div class="stat-title">Date Pipe</div>
+    <div class="stat-value">{{ custonDate() | date:'dd/MM/yyyy'}}</div>
+    <div class="stat-desc">{{ custonDate() }}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Date Pipe</div>
+    <div class="stat-value">{{ custonDate() | date: 'HH:mm:ss'}}</div>
+    <div class="stat-desc">{{ custonDate() }}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Date Pipe</div>
+    <div class="stat-value">{{ custonDate() | date: 'EEEE d, MMMM'}}</div>
+    <div class="stat-desc">{{ custonDate() }}</div>
+  </div>
+
+
+</div>
+
+<div class="flex flex-row gap-4 mt-4">
+  <div class="flex flex-col">
+    <h1 class="text-2xl font-bold">
+      <span class="text-lg" >locale actual: {{ currentLocale() }}</span>
+    </h1>
+  </div>
+  <button class="btn btn-primary text-white" (click)="changeLocale('fr')">charger en francais</button>
+  <button class="btn btn-primary text-white" (click)="changeLocale('en')">charger en english</button>
+  <button class="btn btn-primary text-white" (click)="changeLocale('es')">charger en espanhol</button>
+</div>

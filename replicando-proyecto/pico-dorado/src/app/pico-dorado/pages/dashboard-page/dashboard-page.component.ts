@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { SidebarOptionsComponent } from "../../components/sidebar-options/sidebar-options.component";
 import { RouterOutlet } from '@angular/router';
 
@@ -9,4 +9,6 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './dashboard-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DashboardPageComponent { }
+export class DashboardPageComponent {
+
+}
