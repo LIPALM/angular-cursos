@@ -29,6 +29,7 @@ export class CharacterAddComponent  {
     this.nweCharacter.emit(newCharacter);
     this.resetFields()
 
+
   }
 
   resetFields() {
